@@ -1,0 +1,14 @@
+__pycache__/
+*.pyc
+
+node_modules/
+
+.env
+
+venv/
+
+dist/
+
+build/
+
+.vscode/settings.json
