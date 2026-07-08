@@ -1,11 +1,18 @@
+from app.services.defender import DefenderService
 from app.services.system_info import SystemInfoService
 
-class Scanner: 
-    """Coordinates all scan services."""
+
+class Scanner:
+    def __init__(self):
+        self.checks = [
+            SystemInfoService(),
+            DefenderService(),
+        ]
 
     def run(self):
         results = []
 
-        results.extend(SystemInfoService().run())
+        for check in self.checks:
+            results.extend(check.run())
 
         return results

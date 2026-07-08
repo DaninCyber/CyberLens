@@ -1,6 +1,9 @@
 export interface ScanResult {
-  name: string;
-  value: string;
-  status: string;
-  recommendation: string | null;
+    id: string;
+    title: string;
+    value: string;
+    status: string;
+    description: string;
+    recommendation: string | null;
+    category: string;
 }

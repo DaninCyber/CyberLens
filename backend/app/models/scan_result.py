@@ -1,11 +1,17 @@
 from dataclasses import dataclass
+from typing import Optional
+
 
 @dataclass
 class ScanResult:
-    """Represents a single piece of information returned by a scan."""
+    """
+    Represents a single scan result returned by CyberLens.
+    """
 
-
-    name: str
+    id: str
+    title: str
     value: str
-    status: str = "INFO"
-    recommendation: str | None = None
+    status: str
+    description: str
+    recommendation: Optional[str] = None
+    category: str = "System"

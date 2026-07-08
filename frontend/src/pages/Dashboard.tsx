@@ -54,7 +54,7 @@ export default function Dashboard() {
                 {results.map((result) => (
 
                     <InfoCard
-                        key={result.name}
+                        key={result.id}
                         result={result}
                     />
 

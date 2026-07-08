@@ -10,11 +10,14 @@ def scan():
     results = Scanner().run()
 
     return [
-        {
-            "name": result.name,
-            "value": result.value,
-            "status": result.status,
-            "recommendation": result.recommendation,
-        }
-        for result in results
-    ]
+    {
+        "id": result.id,
+        "title": result.title,
+        "value": result.value,
+        "status": result.status,
+        "description": result.description,
+        "recommendation": result.recommendation,
+        "category": result.category,
+    }
+    for result in results
+]
