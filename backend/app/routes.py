@@ -7,17 +7,20 @@ router = APIRouter()
 
 @router.get("/scan")
 def scan():
-    results = Scanner().run()
+    scan = Scanner().run()
 
-    return [
-    {
-        "id": result.id,
-        "title": result.title,
-        "value": result.value,
-        "status": result.status,
-        "description": result.description,
-        "recommendation": result.recommendation,
-        "category": result.category,
-    }
-    for result in results
-]
+    return {
+    "score": scan["score"],
+    "results": [
+        {
+            "id": result.id,
+            "title": result.title,
+            "value": result.value,
+            "status": result.status,
+            "description": result.description,
+            "recommendation": result.recommendation,
+            "category": result.category,
+        }
+        for result in scan["results"]
+    ],
+}
